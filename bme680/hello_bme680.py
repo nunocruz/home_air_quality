@@ -37,5 +37,5 @@ while True:
     print("Altitude = %0.2f meters" % bme680.altitude)
     print("Gas: %d ohm" % bme680.gas)
 
-    time.sleep(interval)
+    time.sleep(1)
 
