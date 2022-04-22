@@ -21,7 +21,7 @@ bme680.sea_level_pressure = 1006.64
 # You will usually have to add an offset to account for the temperature of
 # the sensor. This is usually around 5 degrees but varies by use. Use a
 # separate temperature sensor to calibrate this one.
-temperature_offset = -2
+temperature_offset = -1.5
 
 def dew_point(celsius, humidity):
     a = 17.271
