@@ -31,8 +31,8 @@ def dew_point(celsius, humidity):
 
 while True:
     print("\nTemperature: %0.1f C" % (bme680.temperature + temperature_offset))
-    print("Humidity: %0.1f %%" % bme680.humidity)
-    print("Dew Point: %0.1f C" % dew_point(bme680.temperature + temperature_offset,  bme680.humidity))
+    print("Humidity: %0.1f %%" % bme680.relative_humidity)
+    print("Dew Point: %0.1f C" % dew_point(bme680.temperature + temperature_offset,  bme680.relative_humidity))
     print("Pressure: %0.3f hPa" % bme680.pressure)
     print("Altitude = %0.2f meters" % bme680.altitude)
     print("Gas: %d ohm" % bme680.gas)
