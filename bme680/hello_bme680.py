@@ -8,12 +8,12 @@ import digitalio
 import adafruit_bme680
 
 #data_pulling_interval
-interval = 1
+print_interval = 1
 
 #setup
 spi = board.SPI()
 cs = digitalio.DigitalInOut(board.CE1)
-bme680 = adafruit_bme680.Adafruit_BME680_SPI(spi, cs, refresh_rate = interval)
+bme680 = adafruit_bme680.Adafruit_BME680_SPI(spi, cs, refresh_rate = 10)
 
 # change this to match the location's pressure (hPa) at sea level
 bme680.sea_level_pressure = 1006.64
