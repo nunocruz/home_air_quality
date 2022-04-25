@@ -5,6 +5,7 @@ import time
 import board
 import digitalio
 import adafruit_bme680
+import weather
 
 #setup
 spi = board.SPI()
@@ -12,12 +13,12 @@ cs = digitalio.DigitalInOut(board.CE1)
 bme680 = adafruit_bme680.Adafruit_BME680_SPI(spi, cs, refresh_rate = 10)
 
 # change this to match the location's pressure (hPa) at sea level
-bme680.sea_level_pressure = 1006.00
+bme680.sea_level_pressure = weather.get_pressure()
 
 # You will usually have to add an offset to account for the temperature of
 # the sensor. This is usually around 5 degrees but varies by use. Use a
 # separate temperature sensor to calibrate this one.
-temperature_offset = -2
+temperature_offset = -3
 
 print("""Estimate indoor air quality
 
