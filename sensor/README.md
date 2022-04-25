@@ -1,11 +1,6 @@
-# home_air_quality
-Using a BME680 from Adadruit and a raspberry Pi to create an airquality dashboard. 
+# Python sensor project
 
-# Instalation
-
-## Python sensor project
-
-### CircuitPython
+## CircuitPython
 ```
 cd ~
 sudo pip3 install --upgrade adafruit-python-shell
@@ -14,7 +9,7 @@ sudo python3 raspi-blinka.py
 ```
 More at: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 
-### BME680 library
+## BME680 library
 ```
 sudo pip3 install adafruit-circuitpython-bme680
 ```
