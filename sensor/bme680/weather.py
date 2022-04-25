@@ -1,7 +1,7 @@
 import requests
 import json
 
-#https://api.openweathermap.org/data/2.5/onecall?lat=52.369670&lon=4.882320&exclude=minutely,hourly,daily,alerts&units=metric&appid=f8129232d5a838914f4db78408b98275
+#https://api.openweathermap.org/data/2.5/onecall?lat=52.369670&lon=4.882320&exclude=minutely,hourly,daily,alerts&units=metric&appid=
 
 base_url = "https://api.openweathermap.org/data/2.5/onecall"
 params = dict()
