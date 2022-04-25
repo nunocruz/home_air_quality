@@ -1,15 +1,16 @@
 import requests
 import json
+import config
 
 #https://api.openweathermap.org/data/2.5/onecall?lat=52.369670&lon=4.882320&exclude=minutely,hourly,daily,alerts&units=metric&appid=
 
 base_url = "https://api.openweathermap.org/data/2.5/onecall"
 params = dict()
-params["lat"] = "52.369670"
-params["lon"] = "4.882320"
+params["lat"] = config.latitude
+params["lon"] = config.longitude
 params["exclude"] = "minutely,hourly,daily,alerts"
 params["units"] = "metric"
-params["appid"] = "631da37fe3eef2ae16ec89d22d7f38ea"
+params["appid"] = config.api_key
 
 
 def get_current_weather():
@@ -20,3 +21,5 @@ def get_current_weather():
 def get_pressure():
 	current_weather = get_current_weather()
 	return current_weather['pressure']
+
+#print(get_pressure())
