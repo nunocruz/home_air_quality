@@ -2,8 +2,6 @@ import requests
 import json
 import config
 
-#https://api.openweathermap.org/data/2.5/onecall?lat=52.369670&lon=4.882320&exclude=minutely,hourly,daily,alerts&units=metric&appid=
-
 base_url = "https://api.openweathermap.org/data/2.5/onecall"
 params = dict()
 params["lat"] = config.latitude
@@ -21,5 +19,11 @@ def get_current_weather():
 def get_pressure():
 	current_weather = get_current_weather()
 	return current_weather['pressure']
+
+def dew_point(celsius, humidity):
+    a = 17.271
+    b = 237.3
+    temp = (a * celsius) / (b + celsius) + math.log(humidity / 100)
+    return (b * temp) / (a - temp)
 
 #print(get_pressure())
