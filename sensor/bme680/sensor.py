@@ -1,6 +1,7 @@
 import adafruit_bme680
 import board
 import digitalio
+import weather
 
 #setup
 spi = board.SPI()

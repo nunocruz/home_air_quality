@@ -4,7 +4,6 @@ import config
 import math
 import sensor
 import time
-import weather
 
 print("""Estimate indoor air quality
 
@@ -50,14 +49,16 @@ try:
         hum_offset = relative_humidity - hum_baseline
 
         # Calculate hum_score as the distance from the hum_baseline.
-        hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
-            if hum_offset > 0 
-            else (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
+        if hum_offset > 0:
+            hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
+        else:
+            hum_score = (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
 
         # Calculate gas_score as the distance from the gas_baseline.
-        gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
-            if gas_offset > 0:
-            else 100 - (hum_weighting * 100)
+        if gas_offset > 0:
+            gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
+        else:
+            gas_score = 100 - (hum_weighting * 100)
 
         # Calculate air_quality_score. 
         air_quality_score = hum_score + gas_score
